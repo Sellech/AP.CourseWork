@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="164.0" prefWidth="330.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="26.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Щоб отримати доступ до основного функціоналу програми - створіть авіакомпанію" textAlignment="CENTER" wrappingWidth="277.2161865234375">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="26.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Для цього введіть її назву і натисніть кнопку &quot;створити&quot;" textAlignment="CENTER" wrappingWidth="277.2161865234375">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Line endX="134.20001220703125" endY="1.52587890625E-5" layoutX="164.0" layoutY="81.0" startX="-132.1999969482422" startY="1.52587890625E-5" />
+   </children>
+</AnchorPane>
