@@ -56,5 +56,9 @@ public class PlaneListController {
         DatabaseAction action = new DatabaseAction();
         PlaneListView.getItems().addAll(action.GetPlaneList());
 
+
+
+
+
     }
 }

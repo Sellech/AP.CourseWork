@@ -1,6 +1,7 @@
 package Menu;
 
 import Airline.Airline;
+import Database.DatabaseAction;
 import javafx.application.*;
 import javafx.scene.image.Image;
 import javafx.stage.*;
@@ -37,6 +38,8 @@ public class Menu extends Application {
 
     @Override
     public void stop() throws Exception {
+        DatabaseAction action = new DatabaseAction();
+        action.DeleteAirline();
         System.out.println("Application stop!");
         super.stop();
     }

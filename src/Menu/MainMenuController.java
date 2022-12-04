@@ -72,6 +72,22 @@ public class MainMenuController {
             }
         });
 
+        // Додаємо функціонал кнопці AirlineInfoButton
+        AirlineInfoButton.setOnAction(actionEvent -> {
+            try{
+                Parent root = FXMLLoader.load(getClass().getResource("MainMenu/AirlineInfo.fxml"));
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) PlaneListButton.getScene().getWindow();
+
+                stage.setScene(scene);
+                stage.show();
+            }
+            catch(java.io.IOException e){
+                e.printStackTrace();
+            }
+        });
+
+
 
 
     }

@@ -22,4 +22,52 @@ public class Plane {
     public String toString() {
         return Name + " " + SideNumber;
     }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public void setSideNumber(String sideNumber) {
+        SideNumber = sideNumber;
+    }
+
+    public void setFlyDistance(int flyDistance) {
+        FlyDistance = flyDistance;
+    }
+
+    public void setFuelConsumption(double fuelConsumption) {
+        FuelConsumption = fuelConsumption;
+    }
+
+    public void setPassengerCapacity(int passengerCapacity) {
+        PassengerCapacity = passengerCapacity;
+    }
+
+    public void setCargoCapacity(int cargoCapacity) {
+        CargoCapacity = cargoCapacity;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public String getSideNumber() {
+        return SideNumber;
+    }
+
+    public int getFlyDistance() {
+        return FlyDistance;
+    }
+
+    public double getFuelConsumption() {
+        return FuelConsumption;
+    }
+
+    public int getPassengerCapacity() {
+        return PassengerCapacity;
+    }
+
+    public int getCargoCapacity() {
+        return CargoCapacity;
+    }
 }

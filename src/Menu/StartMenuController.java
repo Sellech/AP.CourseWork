@@ -5,7 +5,8 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-import Airline.Airline;
+
+import Database.DatabaseAction;
 import com.sun.jdi.connect.IllegalConnectorArgumentsException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -112,8 +113,8 @@ public class StartMenuController {
                 }
             }
             else{
-                Airline airline = new Airline();
-                airline.setAirlineName(AirlineName);
+                DatabaseAction action = new DatabaseAction();
+                action.CreateAirline(AirlineName);
 
                 // Створюємо нове вікно з повним функціоналом
                 try{
