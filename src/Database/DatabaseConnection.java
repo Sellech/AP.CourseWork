@@ -24,7 +24,7 @@ public class DatabaseConnection {
 
         // Підключення
         dbConnection = DriverManager.getConnection(url, username, password);
-        System.out.println("Підключення до SQL серверу");
+        System.out.println("\nПідключення до SQL серверу");
 
         return dbConnection;
     }
