@@ -1,23 +1,14 @@
 package Menu.MainMenu;
 
 import java.net.URL;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
-import Airline.Plane;
 import Database.DatabaseAction;
-import Database.DatabaseConnection;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import javafx.collections.ObservableList;
-import javafx.collections.FXCollections;
-
 import javafx.scene.control.ListView;
 
 public class PlaneListController {
@@ -55,10 +46,5 @@ public class PlaneListController {
         // Додаємо функціонал ListView
         DatabaseAction action = new DatabaseAction();
         PlaneListView.getItems().addAll(action.GetPlaneList());
-
-
-
-
-
     }
 }

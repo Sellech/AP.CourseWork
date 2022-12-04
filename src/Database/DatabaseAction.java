@@ -12,16 +12,16 @@ import java.util.ArrayList;
 public class DatabaseAction  {
 
     // Конфігурація
-    private final String AIRLINE_TABLE = "Airline"; // таблиця що містить назву авіакомпанії
-    private final String AIRLINE_NAME = "AirlineName";  // назва стовпця, який містить ім'я авіалінії
+    private final String AIRLINE_TABLE = "Airline"; // таблиця авіакомпанії
+    private final String AIRLINE_NAME = "AirlineName";
 
-    private final String PLANE_TABLE = "Plane"; // таблиця авіапарку компанії
-
-
-
-
-
-
+    private final String PLANE_TABLE = "Plane"; // таблиця авіапарку
+    private final String PLANE_NAME = "[Name]";
+    private final String PLANE_SIDE_NUMBER = "SideNumber";
+    private final String PLANE_FLY_DISTANCE = "FlyDistance";
+    private final String PLANE_FUEL_CONSUMPTION= "FuelConsumption";
+    private final String PLANE_PASSENGER_CAPACITY = "PassengerCapacity";
+    private final String PLANE_CARGO_CAPACITY = "CargoCapacity";
 
     private final DatabaseConnection connection;
 
@@ -113,6 +113,31 @@ public class DatabaseAction  {
         }
 
         return PlaneList;
+    }
+
+    /**
+     * Метод для додавання літака до бд
+     */
+    public void PlaneAdd(Plane plane){
+        String query = "INSERT INTO " + PLANE_TABLE + " ("
+                + PLANE_NAME + "," + PLANE_SIDE_NUMBER + ","
+                + PLANE_FLY_DISTANCE + "," + PLANE_FUEL_CONSUMPTION + ","
+                + PLANE_PASSENGER_CAPACITY + "," + PLANE_CARGO_CAPACITY
+                + ") VALUES(?,?,?,?,?,?)";
+        try{
+            PreparedStatement statement = connection.getDbConnection().prepareStatement(query);
+            statement.setString(1, plane.getName());
+            statement.setString(2, plane.getSideNumber());
+            statement.setInt(3, plane.getFlyDistance());
+            statement.setDouble(4, plane.getFuelConsumption());
+            statement.setInt(5, plane.getPassengerCapacity());
+            statement.setDouble(6, plane.getCargoCapacity());
+            statement.executeUpdate();
+            connection.closeDbConnection();
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
     }
 
 }

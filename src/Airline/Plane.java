@@ -6,10 +6,10 @@ public class Plane {
     private int FlyDistance;
     private double FuelConsumption;
     private int PassengerCapacity;
-    private int CargoCapacity;
+    private double CargoCapacity;
 
     public Plane(String Name, String SideNumber, int FlyDistance,
-                 double FuelConsumption, int PassengerCapacity, int CargoCapacity) {
+                 double FuelConsumption, int PassengerCapacity, double CargoCapacity) {
         this.Name = Name;
         this.SideNumber = SideNumber;
         this.FlyDistance = FlyDistance;
@@ -67,7 +67,7 @@ public class Plane {
         return PassengerCapacity;
     }
 
-    public int getCargoCapacity() {
+    public double getCargoCapacity() {
         return CargoCapacity;
     }
 }

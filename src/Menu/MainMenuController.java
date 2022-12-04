@@ -63,7 +63,6 @@ public class MainMenuController {
                 Parent root = FXMLLoader.load(getClass().getResource("MainMenu/PlaneList.fxml"));
                 Scene scene = new Scene(root);
                 Stage stage = (Stage) PlaneListButton.getScene().getWindow();
-
                 stage.setScene(scene);
                 stage.show();
             }
@@ -78,7 +77,6 @@ public class MainMenuController {
                 Parent root = FXMLLoader.load(getClass().getResource("MainMenu/AirlineInfo.fxml"));
                 Scene scene = new Scene(root);
                 Stage stage = (Stage) PlaneListButton.getScene().getWindow();
-
                 stage.setScene(scene);
                 stage.show();
             }
@@ -87,7 +85,19 @@ public class MainMenuController {
             }
         });
 
-
+        // Додаємо функціонал кнопці PlaneAddButton
+        PlaneAddButton.setOnAction(actionEvent -> {
+            try{
+                Parent root = FXMLLoader.load(getClass().getResource("MainMenu/PlaneAdd.fxml"));
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) PlaneListButton.getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+            }
+            catch(java.io.IOException e){
+                e.printStackTrace();
+            }
+        });
 
 
     }

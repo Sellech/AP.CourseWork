@@ -1,13 +1,8 @@
 package Menu;
 
-import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
-
-
 import Database.DatabaseAction;
-import com.sun.jdi.connect.IllegalConnectorArgumentsException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -132,6 +127,5 @@ public class StartMenuController {
             }
         });
     }
-
 }
 
