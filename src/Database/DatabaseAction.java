@@ -140,4 +140,50 @@ public class DatabaseAction  {
         }
     }
 
+    /**
+     * Метод для зміни інформації про літак в бд
+     * @param RemovablePlane літак, який хочемо змінити
+     * @param ChosenPlane характеристики літака, на які хочемо змінити
+     */
+    public void PlaneChange(Plane RemovablePlane, Plane ChosenPlane){
+        String query = "UPDATE  " + PLANE_TABLE + " SET "
+                + PLANE_NAME + " = ?,"
+                + PLANE_SIDE_NUMBER + " = ?,"
+                + PLANE_FLY_DISTANCE + " = ?,"
+                + PLANE_FUEL_CONSUMPTION + " = ?,"
+                + PLANE_PASSENGER_CAPACITY + " = ?,"
+                + PLANE_CARGO_CAPACITY + " = ? "
+                + "WHERE " + PLANE_SIDE_NUMBER + " = ?";
+        try{
+            PreparedStatement statement = connection.getDbConnection().prepareStatement(query);
+            statement.setString(1, ChosenPlane.getName());
+            statement.setString(2, ChosenPlane.getSideNumber());
+            statement.setInt(3, ChosenPlane.getFlyDistance());
+            statement.setDouble(4, ChosenPlane.getFuelConsumption());
+            statement.setInt(5, ChosenPlane.getPassengerCapacity());
+            statement.setDouble(6, ChosenPlane.getCargoCapacity());
+
+            statement.setString(7, RemovablePlane.getSideNumber());
+            statement.executeUpdate();
+            connection.closeDbConnection();
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Метод для перевірки списку літаків в бд на наявність повторень бортового номера
+     * @return false якщо було знайдено повторення, true - якщо не було знайдено повторень
+     */
+    public boolean SideNumberDuplicateCheck(String SideNumber){
+        ArrayList<Plane> PlaneList = GetPlaneList();
+
+        for(int i=0; i<PlaneList.size(); i++){
+            if(PlaneList.get(i).getSideNumber().equals(SideNumber))
+                return false;
+        }
+        return true;
+    }
+
 }

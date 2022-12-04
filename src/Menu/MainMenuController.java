@@ -99,7 +99,19 @@ public class MainMenuController {
             }
         });
 
-
+        // Додаємо функціонал кнопці PlaneChangeButton
+        PlaneChangeButton.setOnAction(actionEvent -> {
+            try{
+                Parent root = FXMLLoader.load(getClass().getResource("MainMenu/PlaneChange.fxml"));
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) PlaneChangeButton.getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+            }
+            catch(java.io.IOException e){
+                e.printStackTrace();
+            }
+        });
     }
 }
 

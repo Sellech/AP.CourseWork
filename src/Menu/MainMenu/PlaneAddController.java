@@ -105,7 +105,28 @@ public class PlaneAddController {
                         FuelConsumption, PassengerCapacity, CargoCapacity);
 
                 DatabaseAction action = new DatabaseAction();
-                action.PlaneAdd(plane);
+                // Перевірка на наявність повторення бортового номера
+                if (action.SideNumberDuplicateCheck(plane.getSideNumber())) {
+                    action.PlaneAdd(plane);
+                }
+                else{
+                    try{
+                        Parent root = FXMLLoader.load(getClass().getResource("Error.fxml"));
+                        Scene scene = new Scene(root);
+                        Stage stage = new Stage();
+
+                        stage.setTitle("Error");
+                        stage.getIcons().add(new Image(getClass().getResourceAsStream("Error.png")));
+                        stage.setWidth(215);
+                        stage.setHeight(140);
+                        stage.setScene(scene);
+                        stage.show();
+
+                    }
+                    catch(java.io.IOException e){
+                        e.printStackTrace();
+                    }
+                }
             }
         });
 
