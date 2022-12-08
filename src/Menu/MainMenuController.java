@@ -112,6 +112,24 @@ public class MainMenuController {
                 e.printStackTrace();
             }
         });
+
+        // Додаємо функціонал кнопці PlaneInfoButton
+        PlaneInfoButton.setOnAction(actionEvent -> {
+            try{
+                Parent root = FXMLLoader.load(getClass().getResource("MainMenu/Planeinfo.fxml"));
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) PlaneChangeButton.getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+            }
+            catch(java.io.IOException e){
+                e.printStackTrace();
+            }
+        });
+
+
+
+
     }
 }
 

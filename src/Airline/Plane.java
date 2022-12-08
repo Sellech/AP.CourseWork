@@ -23,6 +23,19 @@ public class Plane {
         return Name + " " + SideNumber;
     }
 
+    /**
+     * Метод для виведення детальної інформації про літак
+     * @return містить сформовану стрічку на 5 рядків, яка містить необхідну інформацію
+     */
+    public String detailInformation(){
+        return (Name + "  SN:" + SideNumber
+                + "\n\tДальність: " + FlyDistance + " (км)"
+                + "\n\tСпоживання палива: " + FuelConsumption + " (т/год)"
+                + "\n\tПасажиромісткість: " + PassengerCapacity
+                + "\n\tВантажопідйомність: " + CargoCapacity + " (т)");
+    }
+
+
     public void setName(String name) {
         Name = name;
     }
