@@ -3,9 +3,9 @@ package Airline.Comparator;
 import Airline.Plane;
 import java.util.Comparator;
 
-public class FuelConsumptionComparator implements Comparator<Plane>{
+public class FlyDistanceComparator_DESC implements Comparator<Plane>{
     @Override
     public int compare(Plane p1, Plane p2){
-        return (int)(p2.getFuelConsumption() - p1.getFuelConsumption());
+        return p2.getFlyDistance() - p1.getFlyDistance();
     }
 }

@@ -155,7 +155,33 @@ public class MainMenuController {
             }
         });
 
+        // Додаємо функціонал кнопці SortPlaneListButton
+        SortPlaneListButton.setOnAction(actionEvent -> {
+            try{
+                Parent root = FXMLLoader.load(getClass().getResource("MainMenu/SortPlaneList.fxml"));
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) PlaneChangeButton.getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+            }
+            catch(java.io.IOException e){
+                e.printStackTrace();
+            }
+        });
 
+        // Додаємо функціонал кнопці SummaryPlaneListButton
+        SummaryPlaneListButton.setOnAction(actionEvent -> {
+            try{
+                Parent root = FXMLLoader.load(getClass().getResource("MainMenu/SummaryPlaneList.fxml"));
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) PlaneChangeButton.getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+            }
+            catch(java.io.IOException e){
+                e.printStackTrace();
+            }
+        });
     }
 }
 

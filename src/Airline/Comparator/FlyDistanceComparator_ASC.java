@@ -3,9 +3,9 @@ package Airline.Comparator;
 import Airline.Plane;
 import java.util.Comparator;
 
-public class PassengerCapacityComparator implements Comparator<Plane>{
+public class FlyDistanceComparator_ASC implements Comparator<Plane>{
     @Override
     public int compare(Plane p1, Plane p2){
-        return p2.getPassengerCapacity() - p1.getPassengerCapacity();
+        return p1.getFlyDistance() - p2.getFlyDistance();
     }
 }
