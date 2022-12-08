@@ -173,6 +173,25 @@ public class DatabaseAction  {
     }
 
     /**
+     * Метод для видалення обраного літака з бд
+     * @param RemovablePlane літак, який необхідно видалити
+     */
+    public void PlaneDelete(Plane RemovablePlane){
+        String query = "DELETE FROM " + PLANE_TABLE + " WHERE "
+                + PLANE_SIDE_NUMBER + " = ?";
+        try{
+            PreparedStatement statement = connection.getDbConnection().prepareStatement(query);
+            statement.setString(1, RemovablePlane.getSideNumber());
+
+            statement.executeUpdate();
+            connection.closeDbConnection();
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
+    /**
      * Метод для перевірки списку літаків в бд на наявність повторень бортового номера
      * @return false якщо було знайдено повторення, true - якщо не було знайдено повторень
      */

@@ -35,31 +35,6 @@ public class Plane {
                 + "\n\tВантажопідйомність: " + CargoCapacity + " (т)");
     }
 
-
-    public void setName(String name) {
-        Name = name;
-    }
-
-    public void setSideNumber(String sideNumber) {
-        SideNumber = sideNumber;
-    }
-
-    public void setFlyDistance(int flyDistance) {
-        FlyDistance = flyDistance;
-    }
-
-    public void setFuelConsumption(double fuelConsumption) {
-        FuelConsumption = fuelConsumption;
-    }
-
-    public void setPassengerCapacity(int passengerCapacity) {
-        PassengerCapacity = passengerCapacity;
-    }
-
-    public void setCargoCapacity(int cargoCapacity) {
-        CargoCapacity = cargoCapacity;
-    }
-
     public String getName() {
         return Name;
     }

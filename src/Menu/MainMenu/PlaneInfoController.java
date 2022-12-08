@@ -36,6 +36,7 @@ public class PlaneInfoController {
 
     @FXML
     void initialize() {
+
         // Додаємо функціонал кнопці назад
         GoBackButton.setOnAction(actionEvent -> {
             try{

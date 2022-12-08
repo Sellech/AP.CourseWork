@@ -1,15 +1,11 @@
 package Menu;
 
-import Airline.Airline;
 import Database.DatabaseAction;
 import javafx.application.*;
 import javafx.scene.image.Image;
 import javafx.stage.*;
 import javafx.scene.*;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.text.*;
-import javafx.scene.control.*;
-import javafx.event.*;
 
 public class Menu extends Application {
 
