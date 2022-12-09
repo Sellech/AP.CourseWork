@@ -16,12 +16,12 @@
         </Label>
         <AnchorPane layoutY="82.0" prefHeight="411.0" prefWidth="400.0" style="-fx-background-color: #fafafa;">
             <children>
-                <Button fx:id="GoBackButton" layoutX="259.0" layoutY="355.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="114.0" text="Назад">
+                <Button fx:id="GoBackButton" layoutX="271.0" layoutY="370.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="114.0" text="Назад">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Button>
-                <Button fx:id="ChangePlaneButton" layoutX="40.0" layoutY="355.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="114.0" text="Змінити літак">
+                <Button fx:id="ChangePlaneButton" layoutX="21.0" layoutY="370.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="114.0" text="Змінити літак">
                     <font>
                         <Font size="14.0" />
                     </font>
@@ -33,6 +33,7 @@
             <TextField fx:id="FuelConsumptionTextField" layoutX="221.0" layoutY="213.0" prefHeight="26.0" prefWidth="134.0" promptText="Споживання палива" />
             <TextField fx:id="SideNumberTextField" layoutX="45.0" layoutY="252.0" prefHeight="26.0" prefWidth="134.0" promptText="Бортовий номер" />
             <TextField fx:id="CargoCapacityTextField" layoutX="221.0" layoutY="294.0" prefHeight="26.0" prefWidth="134.0" promptText="Вантажомісткість" />
+            <TextField fx:id="DiagnosticTextField" layoutX="45.0" layoutY="335.0" prefHeight="26.0" prefWidth="134.0" promptText="Дата діагностики" />
             </children>
         </AnchorPane>
     </children>

@@ -22,6 +22,7 @@ public class DatabaseAction  {
     private final String PLANE_FUEL_CONSUMPTION= "FuelConsumption";
     private final String PLANE_PASSENGER_CAPACITY = "PassengerCapacity";
     private final String PLANE_CARGO_CAPACITY = "CargoCapacity";
+    private final String PLANE_LAST_DIAGNOSTIC = "LastDiagnosticDate";
 
     private final DatabaseConnection connection;
 
@@ -103,7 +104,7 @@ public class DatabaseAction  {
             while (result.next()) {
                 Plane plane = new Plane(result.getString(2), result.getString(3),
                         result.getInt(4), result.getDouble(5),
-                        result.getInt(6), result.getInt(7) );
+                        result.getInt(6), result.getInt(7), result.getString(8));
                 PlaneList.add(plane);
             }
             connection.closeDbConnection();
@@ -122,8 +123,8 @@ public class DatabaseAction  {
         String query = "INSERT INTO " + PLANE_TABLE + " ("
                 + PLANE_NAME + "," + PLANE_SIDE_NUMBER + ","
                 + PLANE_FLY_DISTANCE + "," + PLANE_FUEL_CONSUMPTION + ","
-                + PLANE_PASSENGER_CAPACITY + "," + PLANE_CARGO_CAPACITY
-                + ") VALUES(?,?,?,?,?,?)";
+                + PLANE_PASSENGER_CAPACITY + "," + PLANE_CARGO_CAPACITY + ","
+                + PLANE_LAST_DIAGNOSTIC +") VALUES(?,?,?,?,?,?,?)";
         try{
             PreparedStatement statement = connection.getDbConnection().prepareStatement(query);
             statement.setString(1, plane.getName());
@@ -132,6 +133,7 @@ public class DatabaseAction  {
             statement.setDouble(4, plane.getFuelConsumption());
             statement.setInt(5, plane.getPassengerCapacity());
             statement.setDouble(6, plane.getCargoCapacity());
+            statement.setString(7, plane.getLastDiagnosticDate());
             statement.executeUpdate();
             connection.closeDbConnection();
         }
@@ -152,7 +154,8 @@ public class DatabaseAction  {
                 + PLANE_FLY_DISTANCE + " = ?,"
                 + PLANE_FUEL_CONSUMPTION + " = ?,"
                 + PLANE_PASSENGER_CAPACITY + " = ?,"
-                + PLANE_CARGO_CAPACITY + " = ? "
+                + PLANE_CARGO_CAPACITY + " = ?, "
+                + PLANE_LAST_DIAGNOSTIC + " = ? "
                 + "WHERE " + PLANE_SIDE_NUMBER + " = ?";
         try{
             PreparedStatement statement = connection.getDbConnection().prepareStatement(query);
@@ -162,8 +165,9 @@ public class DatabaseAction  {
             statement.setDouble(4, ChosenPlane.getFuelConsumption());
             statement.setInt(5, ChosenPlane.getPassengerCapacity());
             statement.setDouble(6, ChosenPlane.getCargoCapacity());
+            statement.setString(7, ChosenPlane.getLastDiagnosticDate());
 
-            statement.setString(7, RemovablePlane.getSideNumber());
+            statement.setString(8, RemovablePlane.getSideNumber());
             statement.executeUpdate();
             connection.closeDbConnection();
         }

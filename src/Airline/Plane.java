@@ -7,15 +7,18 @@ public class Plane {
     private double FuelConsumption;
     private int PassengerCapacity;
     private double CargoCapacity;
+    private String LastDiagnosticDate;
 
     public Plane(String Name, String SideNumber, int FlyDistance,
-                 double FuelConsumption, int PassengerCapacity, double CargoCapacity) {
+                 double FuelConsumption, int PassengerCapacity, double CargoCapacity,
+                 String LastDiagnosticDate) {
         this.Name = Name;
         this.SideNumber = SideNumber;
         this.FlyDistance = FlyDistance;
         this.FuelConsumption = FuelConsumption;
         this.PassengerCapacity = PassengerCapacity;
         this.CargoCapacity = CargoCapacity;
+        this.LastDiagnosticDate = LastDiagnosticDate;
     }
 
     @Override
@@ -32,7 +35,9 @@ public class Plane {
                 + "\n\tДальність: " + FlyDistance + " (км)"
                 + "\n\tСпоживання палива: " + FuelConsumption + " (т/год)"
                 + "\n\tПасажиромісткість: " + PassengerCapacity
-                + "\n\tВантажопідйомність: " + CargoCapacity + " (т)");
+                + "\n\tВантажопідйомність: " + CargoCapacity + " (т)"
+                + "\n\tДата останньої діагностики: " + LastDiagnosticDate);
+
     }
 
     public String getName() {
@@ -57,5 +62,9 @@ public class Plane {
 
     public double getCargoCapacity() {
         return CargoCapacity;
+    }
+
+    public String getLastDiagnosticDate() {
+        return LastDiagnosticDate;
     }
 }

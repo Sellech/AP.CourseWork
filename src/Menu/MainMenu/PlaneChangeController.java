@@ -29,6 +29,8 @@ public class PlaneChangeController {
     private TextField CargoCapacityTextField;
 
     @FXML
+    private TextField DiagnosticTextField;
+    @FXML
     private Button ChangePlaneButton;
 
     @FXML
@@ -85,7 +87,9 @@ public class PlaneChangeController {
                             FlyDistanceStr = FlyDistanceTextField.getText(),
                             FuelConsumptionStr = FuelConsumptionTextField.getText(),
                             CargoCapacityStr = CargoCapacityTextField.getText(),
-                            PassengerCapacityStr = PassengerCapacityTextField.getText();
+                            PassengerCapacityStr = PassengerCapacityTextField.getText(),
+                            LastDiagnosticDate = DiagnosticTextField.getText();
+
 
                     if (    ((((PlaneName.equals("") || SideNumber.equals(""))
                             || FlyDistanceStr.equals("")) || FuelConsumptionStr.equals(""))
@@ -116,7 +120,7 @@ public class PlaneChangeController {
                                 CargoCapacity = Double.parseDouble(CargoCapacityStr);
 
                         Plane ChosenPlane = new Plane(PlaneName, SideNumber, FlyDistance,
-                                FuelConsumption, PassengerCapacity, CargoCapacity);
+                                FuelConsumption, PassengerCapacity, CargoCapacity, LastDiagnosticDate);
                         Plane RemovablePlane = PlaneListView.getSelectionModel().getSelectedItem();
 
                         DatabaseAction action = new DatabaseAction();
@@ -124,7 +128,7 @@ public class PlaneChangeController {
                         if (action.SideNumberDuplicateCheck(ChosenPlane.getSideNumber())) {
                             action.PlaneChange(RemovablePlane, ChosenPlane);
 
-                            // Повертаємось назад в меню
+                            // Повертаємось назад в меню1
                             try{
                                 Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
                                 Scene scene = new Scene(root);

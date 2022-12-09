@@ -102,7 +102,7 @@ public class PlaneAddController {
                         CargoCapacity = Double.parseDouble(CargoCapacityStr);
 
                 Plane plane = new Plane(PlaneName, SideNumber, FlyDistance,
-                        FuelConsumption, PassengerCapacity, CargoCapacity);
+                        FuelConsumption, PassengerCapacity, CargoCapacity, "00.00.0000");
 
                 DatabaseAction action = new DatabaseAction();
                 // Перевірка на наявність повторення бортового номера
